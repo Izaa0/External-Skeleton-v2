@@ -1,5 +1,5 @@
 # External-Skeleton-v2
-Template for External Cheats
+Template for External Cheats written in C++
 
 ## Documentation:
 
