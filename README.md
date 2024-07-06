@@ -91,6 +91,7 @@ proc.cpp ( i know its differentt but it should still explain):
 
 // Why DWORD? The Process Id is a DWORD in the Windows API. 
 // Why const wchar_t? The default programm settings for visual studio is to use unicode as the default character set
+
 DWORD GetProcId(const wchar_t* procName)
 {
 
@@ -208,6 +209,7 @@ PROCESS_FOUND:
 // and when you are compiling for x64 then its is going to compile for a 64bit variable
 // So in order words it doesnt matter for which build you are compiling since it automatically converts to the
 // correct version -> either x86 or x64.
+
 uintptr_t GetModuleBaseAddress(DWORD procId, const wchar_t* modName)
 {
 	uintptr_t modBaseAddr = 0;
@@ -273,6 +275,7 @@ MODULE_FOUND:
 // And then it is going to take a vector of unsignend integers that are going to be our offsets
 uintptr_t FindDMAAddy(HANDLE hProc, uintptr_t ptr, std::vector<unsigned int> offsets)
 {
+
 	// grabs the value of ptr and puts it in addr 
 	uintptr_t addr = ptr;
 
@@ -353,6 +356,7 @@ entry.cpp:
 
 int main()
 {
+
     // define multiple variables
     bool bOption1{false}, bOption2{ false }, bOption3{ false }, bOption4{ false };
 
