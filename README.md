@@ -10,6 +10,7 @@ mem.cpp:
 
 void mem::PatchEx(BYTE* dst, BYTE* src, unsigned int size, HANDLE hProcess)
 {
+
 	DWORD oldprotect;
 	// Each page of memory is given permission on what memory you can do if you have the handle open. What access permission are
 	// you grantet? Ask the OS to give us permissions. Part of the Security system.
@@ -52,6 +53,7 @@ void mem::PatchEx(BYTE* dst, BYTE* src, unsigned int size, HANDLE hProcess)
 
 void mem::NopEx(BYTE* dst, unsigned int size, HANDLE hProcess)
 {
+
 	// Get new byte array on the heap
 	BYTE* nopArray = new BYTE[size];
 
@@ -91,6 +93,7 @@ proc.cpp ( i know its differentt but it should still explain):
 // Why const wchar_t? The default programm settings for visual studio is to use unicode as the default character set
 DWORD GetProcId(const wchar_t* procName)
 {
+
 	// We create a variable process id to store the process id we find. we assign it the value 0 for error checking.
 	// DWORD: Allocates and optionally initializes a double word (4 bytes) of storage for each initializer.
 	// https://learn.microsoft.com/en-us/cpp/assembler/masm/dword?view=msvc-170#syntax
@@ -187,6 +190,7 @@ DWORD GetProcId(const wchar_t* procName)
 	else { std::cout << "Error Code: " << GetLastError() << std::endl; }
 
 PROCESS_FOUND:
+
 	// Then we close the handle to the snapshot and that is going to stop memory leaks 
 	// and then we return the procId
 	// CloseHandle: Closes an open object handle.
