@@ -5,14 +5,18 @@ Template for External Cheats
 
 mem.h:
 
-#pragma once
-#include <Windows.h>
-
-namespace mem
 {
 
-	void PatchEx(BYTE* dst, BYTE* src, unsigned int size, HANDLE hProcess );
-	void NopEx(BYTE* dst, unsigned int size, HANDLE hProcess);
+	#pragma once
+	#include <Windows.h>
+	
+	namespace mem
+	{
+	
+		void PatchEx(BYTE* dst, BYTE* src, unsigned int size, HANDLE hProcess );
+		void NopEx(BYTE* dst, unsigned int size, HANDLE hProcess);
+	}
+
 }
 
 mem.cpp:
